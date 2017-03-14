@@ -34,6 +34,17 @@ class Stack:
     def is_empty(self):
         return self.peek() is None
 
+    def __str__(self):
+        elements = []
+        current_node = self.top
+        while current_node:
+            elements.append(current_node.data)
+            current_node = current_node.prev
+        return ' '.join([str(x) for x in elements])
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class StackTestCase(unittest.TestCase):
     def test(self):
